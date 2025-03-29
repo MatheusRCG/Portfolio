@@ -18,6 +18,8 @@ body {
   background-color: var(--tertiary-color);
   color: var(--quaternary-color);
   font-family: Arial, sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -28,10 +30,6 @@ h1 {
 p {
   font-size: 1.2rem;
   line-height: 1.5;
-}
-
-section {
-  /* padding: 80px 50px; */
 }
 
 #home,
@@ -76,6 +74,7 @@ nav ul li a {
 /* -- HOME SECTION -- */
 .banner-image {
   width: 100%;
+  display: block;
 }
 
 .introduction {
