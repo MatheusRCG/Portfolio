@@ -43,6 +43,7 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+  margin-top: 15px;
 }
 
 p {
@@ -136,7 +137,8 @@ nav ul li a {
   width: 50%;
 }
 
-/* -- SKILS SECTION -- */
+/* -- SKILLS SECTION -- */
+/* -- SKILLS RIGHT SIDE -- */
 .skill-btn {
   background-color: var(--secondary-color);
   color: var(--primary-color);
@@ -194,6 +196,7 @@ nav ul li a {
   box-shadow: 0 0 10px var(--box-shadow-color);
   transform: scale(1.05);
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 .skill-item:active {
   transition: all 0.2s ease;
@@ -206,6 +209,11 @@ nav ul li a {
 
 .icon {
   width: 50px;
+}
+
+/* -- SKILLS LEFT SIDE -- */
+.default-skill {
+  text-align: center;
 }
 
 /* -- FOOTER -- */
