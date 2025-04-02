@@ -226,6 +226,10 @@ nav ul li a {
   width: 50px;
 }
 
+.git {
+  filter: invert(1);
+}
+
 /* -- SKILLS LEFT SIDE -- */
 .default-skill {
   text-align: center;
