@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const skillsContainer = document.querySelector(".skills-left");
   let allSkillsList = null;
 
+  function removeSelectedClass(elements) {
+    elements.forEach((el) => el.classList.remove("selected"));
+  }
+
   function hideAllLists() {
     document.querySelectorAll(".skill-list").forEach((list) => {
       list.style.display = "none";
@@ -49,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       const category = this.getAttribute("data-category");
       filterSkills(category);
+      removeSelectedClass(skillButtons);
+      this.classList.add("selected");
     });
   });
 
@@ -74,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (selectedText) {
         selectedText.style.display = "block";
       }
+
+      removeSelectedClass(skillItems);
+      this.classList.add("selected");
     });
   });
 });

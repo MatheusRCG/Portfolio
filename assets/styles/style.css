@@ -177,7 +177,7 @@ nav ul li a {
   transform: scale(0.8);
 }
 
-.skill-btn:focus {
+.skill-btn.selected {
   background-color: var(--primary-color);
   color: var(--quaternary-color);
 }
@@ -218,7 +218,7 @@ nav ul li a {
   transform: scale(0.8);
 }
 
-.skill-item:focus {
+.skill-item.selected {
   background-color: var(--primary-color);
 }
 
