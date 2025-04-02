@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
+  // -- SKILL FILTER --
   const skillButtons = document.querySelectorAll(".skill-btn");
   const skillLists = document.querySelectorAll(".skill-list");
   const skillsContainer = document.querySelector(".skills-left");
-  const skillItems = document.querySelectorAll(".skill-item");
-  const skillTexts = document.querySelectorAll(".skills-content-list li");
-  const defaultText = document.querySelector('[data-category="dafault-skill"]');
   let allSkillsList = null;
 
   function hideAllLists() {
@@ -54,23 +53,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  showAllSkills();
+
+
+  // -- SKILL TEXTS --
+  const skillItems = document.querySelectorAll(".skill-item"); // Itens clicáveis
+  const skillTexts = document.querySelectorAll(".skills-content-list li");
+  const defaultText = document.querySelector('[data-category="dafault-skill"]');
+
+  // Oculta todos os textos, exceto o inicial
   skillTexts.forEach((text) => (text.style.display = "none"));
   defaultText.style.display = "block";
 
   skillItems.forEach((item) => {
     item.addEventListener("click", function () {
-      const category = this.getAttribute("data-category");
+      const category = this.getAttribute("data-category"); // Pega a categoria do item clicado
       const selectedText = document.querySelector(
         `.skills-content-list li[data-category="${category}"]`
       );
 
+      // Oculta todos os textos antes de exibir o novo
       skillTexts.forEach((text) => (text.style.display = "none"));
 
+      // Exibe o texto correspondente à habilidade clicada
       if (selectedText) {
         selectedText.style.display = "block";
       }
     });
   });
-
-  showAllSkills();
 });
