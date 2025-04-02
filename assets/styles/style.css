@@ -227,7 +227,9 @@ nav ul li a {
 }
 
 .git {
-  filter: invert(1);
+  /* filter: invert(1); */
+  background-color: white;
+  border-radius: 50%;
 }
 
 /* -- SKILLS LEFT SIDE -- */
