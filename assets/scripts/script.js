@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
       skillLists.forEach((list) => {
         list.querySelectorAll(".skill-item").forEach((item) => {
           let clonedItem = item.cloneNode(true);
-          let randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+          let randomAnimation =
+            animations[Math.floor(Math.random() * animations.length)];
           clonedItem.classList.add(randomAnimation);
 
           allSkillsList.appendChild(clonedItem);

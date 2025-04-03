@@ -60,7 +60,6 @@
   transform: translateX(0); /* Fica na posição normal */
 }
 
-
 /* -- CONFIGURATIONS -- */
 :root {
   --primary-color: #00aaff;
@@ -131,7 +130,7 @@ ul {
 }
 
 section,
-footer {
+#contact {
   min-height: 400px;
 }
 
@@ -209,7 +208,7 @@ nav ul li {
   transform: scale(0.8);
 }
 
-.contact-us-btn{
+.contact-us-btn {
   display: inline-block;
 
   animation: default-skill 2s ease-in-out infinite;
@@ -308,7 +307,7 @@ nav ul li {
   animation: default-skill 2s ease-in-out infinite;
 }
 
-/* -- FOOTER -- */
+/* -- CONTACT SECTION -- */
 #contact {
   flex-direction: column;
   justify-content: center;
@@ -362,4 +361,27 @@ nav ul li {
   border-width: 8px;
   border-style: solid;
   border-color: var(--primary-color) transparent transparent transparent;
+}
+
+/* -- FOOTER -- */
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  width: 100%;
+}
+
+.copyright p {
+  color: var(--quaternary-color);
+}
+
+.copyright a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
 }
