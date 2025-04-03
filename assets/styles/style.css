@@ -26,7 +26,7 @@
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-100px);
   }
   100% {
     opacity: 1;
@@ -81,6 +81,14 @@ h3 {
   font-size: 1.5rem;
 }
 
+a {
+  display: inline-block;
+  position: relative;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
 p {
   font-size: 1.2rem;
   line-height: 1.5;
@@ -120,6 +128,14 @@ footer {
   width: 100%;
 }
 
+#introduction,
+#projects,
+#about,
+#skills,
+#contact {
+  scroll-margin-top: 40px;
+}
+
 /* -- HEADER -- */
 header {
   width: 100%;
@@ -140,12 +156,6 @@ nav ul li {
   margin: 0 15px;
 }
 
-nav ul li a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: bold;
-}
-
 /* -- HOME SECTION -- */
 .banner-image {
   width: 100%;
@@ -157,6 +167,33 @@ nav ul li a {
   padding: 0 50px;
   text-align: justify;
   animation: fadeIn 2s ease-in;
+}
+
+.btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  margin: 15px 10px 15px 0;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 5px var(--box-shadow-color);
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
+  box-shadow: 0 0 10px var(--box-shadow-color);
+  transition: all 0.5s ease;
+}
+
+.btn:active {
+  transition: all 0.2s ease;
+  transform: scale(0.8);
+}
+
+.contact-us-btn{
+  display: inline-block;
 }
 
 .half-window {
@@ -182,31 +219,13 @@ nav ul li a {
   width: 50%;
 }
 
+#about a:hover {
+  color: var(--quaternary-color);
+  text-shadow: 1px 1px 5px var(--primary-color);
+}
+
 /* -- SKILLS SECTION -- */
 /* -- SKILLS RIGHT SIDE -- */
-.skill-btn {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  border: none;
-  padding: 10px 20px;
-  margin: 15px 10px 15px 0;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 0 5px var(--box-shadow-color);
-}
-
-.skill-btn:hover {
-  background-color: var(--primary-color);
-  color: var(--quaternary-color);
-  box-shadow: 0 0 10px var(--box-shadow-color);
-  transition: all 0.5s ease;
-}
-
-.skill-btn:active {
-  transition: all 0.2s ease;
-  transform: scale(0.8);
-}
-
 .skill-btn.selected {
   background-color: var(--primary-color);
   color: var(--quaternary-color);
@@ -289,11 +308,6 @@ nav ul li a {
   margin-top: 50px;
 }
 
-#contact a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
 #contact i {
   font-size: 2.2rem;
 }
@@ -317,11 +331,6 @@ nav ul li a {
   transform: scale(0.5);
   transition: all 1s ease-in-out;
   pointer-events: none;
-}
-
-#contact a {
-  position: relative;
-  display: inline-block;
 }
 
 #contact a:hover .tooltip {
