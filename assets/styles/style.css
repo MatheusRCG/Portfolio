@@ -454,3 +454,63 @@ nav ul li {
 .copyright a:hover {
   text-decoration: underline;
 }
+
+/* -- MEDIA QUERIES -- */
+@media (max-width: 1200px) {
+  .project {
+    width: 90%; 
+  }
+}
+
+@media (max-width: 950px) {
+  :root {
+    font-size: 75%;
+  }
+
+  section {
+    min-height: 200px;
+  }
+
+  #skills {
+    display: none;
+  }
+
+  #contact ul {
+    justify-content: space-evenly;
+  }
+
+  header {justify-content: center;}
+  header ul {display: none;}
+}
+
+@media (max-width: 720px) {
+  :root {
+    font-size: 65%;
+  }
+
+  img {display: none}
+
+  header {display: none;}
+
+  #home>img{
+    display: inline;
+  }
+
+  .text {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .project {
+    width: 95%; 
+  }
+
+  .project-info {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .project-image {display: none;}
+
+  .about-image {display: none;}
+}
