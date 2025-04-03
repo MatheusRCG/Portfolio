@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // -- HEADER --
+  function smoothScroll(event) {
+    event.preventDefault(); // Impede o comportamento padrão do link
+
+    const targetId = this.getAttribute("href").substring(1); // Pega o ID do destino
+    const targetElement = document.getElementById(targetId); // Encontra o elemento
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 40,
+        behavior: "smooth",
+      });
+    }
+  }
+
+  document
+    .querySelectorAll("nav ul li a, .contact-us-btn")
+    .forEach((anchor) => {
+      anchor.addEventListener("click", smoothScroll);
+    });
+
   // -- SKILL FILTER --
   const skillButtons = document.querySelectorAll(".skill-btn");
   const skillLists = document.querySelectorAll(".skill-list");
