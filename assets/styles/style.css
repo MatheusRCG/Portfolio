@@ -67,8 +67,6 @@
   --tertiary-color: #121212;
   --quaternary-color: #ffffff;
   --box-shadow-color: rgba(0, 170, 255, 0.5);
-  --lighter-section: #1e1e1e;
-  --darker-section: #121212;
 }
 
 * {
@@ -138,12 +136,13 @@ section {
 #home,
 #about,
 #contact {
-  background-color: var(--darker-section);
+  background-color: var(--tertiary-color);
 }
 
 #projects,
-#skills {
-  background-color: var(--lighter-section);
+#skills,
+footer {
+  background-color: var(--secondary-color);
 }
 
 #introduction,
@@ -219,17 +218,78 @@ nav ul li {
 }
 
 /* -- PROJECT SECTION -- */
-#projects {
-  padding: 0px 50px;
+
+.project {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 30px 0;
+  background-color: var(--secondary-color);
+  border-radius: 0 10px 10px 0;
+  /* transform: translateX(-100px); */
 }
 
-.project-card {
-  background-color: var(--secondary-color);
+.p-right {
+  margin-left: auto;
+  border-radius: 10px 0 0 10px;
+}
+
+.project:hover {
+  box-shadow: 0 0 15px 5px var(--box-shadow-color);
+  transition: all 0.3s ease;
+}
+
+.project-info {
+  width: 60%;
   padding: 20px;
-  margin: 10px auto;
-  width: 80%;
-  border-radius: 8px;
-  box-shadow: 0 0 10px var(--box-shadow-color);
+}
+
+.tech-stack {
+  margin: 10px 0;
+}
+
+.tech {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.html {
+  color: #f16529;
+  border: 1px solid #f16529;
+}
+.css {
+  color: #2965f1;
+  border: 1px solid #2965f1;
+}
+.js {
+  color: #f7df1e;
+  border: 1px solid #f7df1e;
+}
+
+.btn-live {
+  background-color: var(--quaternary-color);
+  color: black;
+}
+
+.project-image {
+  width: 40%;
+}
+
+.project-image img {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.p-right img {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 /* -- ABOUT SECTION --  */
@@ -373,7 +433,6 @@ nav ul li {
   font-size: 0.9rem;
   margin-top: 20px;
   padding: 10px;
-  background-color: var(--secondary-color);
   width: 100%;
 }
 
