@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   // -- HEADER --
   function smoothScroll(event) {
-    event.preventDefault(); // Impede o comportamento padrão do link
+    event.preventDefault();
 
-    const targetId = this.getAttribute("href").substring(1); // Pega o ID do destino
-    const targetElement = document.getElementById(targetId); // Encontra o elemento
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
       window.scrollTo({
@@ -42,9 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
       allSkillsList.classList.add("skill-list");
       allSkillsList.style.display = "flex";
 
+      const animations = ["fade-up", "fade-right", "fade-left", "fade-in"];
+
       skillLists.forEach((list) => {
         list.querySelectorAll(".skill-item").forEach((item) => {
-          allSkillsList.appendChild(item.cloneNode(true));
+          let clonedItem = item.cloneNode(true);
+          let randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+          clonedItem.classList.add(randomAnimation);
+
+          allSkillsList.appendChild(clonedItem);
         });
       });
 
@@ -106,4 +112,26 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("selected");
     });
   });
+
+  // -- EFFECTS --
+  function activateAnimations(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+      } else {
+        entry.target.classList.remove("animate");
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(activateAnimations, {
+    root: null,
+    threshold: 0.2,
+  });
+
+  document
+    .querySelectorAll(".fade-in, .fade-up, .fade-left, .fade-right")
+    .forEach((el) => {
+      observer.observe(el);
+    });
 });

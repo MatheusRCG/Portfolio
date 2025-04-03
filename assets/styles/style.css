@@ -7,15 +7,6 @@
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes flip {
   100% {
     transform: rotateZ(360deg) scale(1.3);
@@ -23,16 +14,52 @@
   }
 }
 
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* -- EFFECTS -- */
+/* Animação para subir */
+.fade-in {
+  opacity: 0;
+  transition: all 0.8s ease-out;
 }
+
+.fade-in.animate {
+  opacity: 1;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px); /* Começa deslocado para baixo */
+  transition: all 0.8s ease-out;
+}
+
+.fade-up.animate {
+  opacity: 1;
+  transform: translateY(0); /* Fica na posição normal */
+}
+
+/* Animação para vir da esquerda */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-50px); /* Começa deslocado para a esquerda */
+  transition: all 0.8s ease-out;
+}
+
+.fade-left.animate {
+  opacity: 1;
+  transform: translateX(0); /* Fica na posição normal */
+}
+
+/* Animação para vir da direita */
+.fade-right {
+  opacity: 0;
+  transform: translateX(50px); /* Começa deslocado para a direita */
+  transition: all 0.8s ease-out;
+}
+
+.fade-right.animate {
+  opacity: 1;
+  transform: translateX(0); /* Fica na posição normal */
+}
+
 
 /* -- CONFIGURATIONS -- */
 :root {
@@ -151,14 +178,12 @@ nav ul li {
 /* -- HOME SECTION -- */
 .banner-image {
   width: 100%;
-  animation: fadeIn 2s ease-in;
 }
 
 .text {
   width: 50%;
   padding: 0 50px;
   text-align: justify;
-  animation: fadeIn 2s ease-in;
 }
 
 .btn {
@@ -186,11 +211,12 @@ nav ul li {
 
 .contact-us-btn{
   display: inline-block;
+
+  animation: default-skill 2s ease-in-out infinite;
 }
 
 .half-window {
   width: 50%;
-  animation: fadeIn 2s ease-in;
 }
 
 /* -- PROJECT SECTION -- */
@@ -280,10 +306,6 @@ nav ul li {
 
 .default-skill h3 {
   animation: default-skill 2s ease-in-out infinite;
-}
-
-.skills-content-list li {
-  animation: fadeIn 1s ease-in;
 }
 
 /* -- FOOTER -- */
