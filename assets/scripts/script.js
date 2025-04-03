@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const observer = new IntersectionObserver(activateAnimations, {
     root: null,
-    threshold: 0.2,
+    threshold: 0.3,
   });
 
   document
